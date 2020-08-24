@@ -28,9 +28,13 @@ void setup() {
   lv_obj_align(img_bin, NULL, LV_ALIGN_CENTER, 0, 0);
   
   lv_obj_t *marioContainer = lv_cont_create(scr, NULL);
-  lv_obj_add_style(marioContainer, LV_OBJ_PART_MAIN, &style);
+  static lv_style_t cont_style;
+  lv_style_init(&cont_style);
+  lv_style_set_bg_opa(&cont_style, LV_STATE_DEFAULT, LV_OPA_TRANSP);
+  lv_style_set_border_opa(&cont_style, LV_STATE_DEFAULT, LV_OPA_TRANSP);
+  lv_obj_add_style(marioContainer, LV_OBJ_PART_MAIN, &cont_style);
   
-  lv_obj_set_pos(marioContainer, 100,100);
+  lv_obj_set_pos(marioContainer, 100,150);
   lv_obj_set_width(marioContainer, 23);
   lv_obj_set_height(marioContainer, 46);
 
